@@ -52,8 +52,6 @@
                                 ];
                             ?>
                             <ol class="breadcrumb page-breadcrumb">
-
-
                                 <?php foreach ($links as $link): ?>
                                 <!-- можно еще в IF ELSE -->
                                    <li class="breadcrumb-item <?php echo $link['is_active'] ? "active" : "" ; ?>">
