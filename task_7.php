@@ -46,51 +46,48 @@
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
+
                                     <tbody>
+                                    <?php
+                                        $users = [
+                                                [   'id'=>'1',
+                                                    'firstName'=>'Mark',
+                                                    'lastName'=>'Otto',
+                                                    'userName'=>'@mdo',
+                                                ],
+                                            [   'id'=>'2',
+                                                'firstName'=>'Jacob',
+                                                'lastName'=>'Thornton',
+                                                'userName'=>'@fat',
+                                            ],
+                                            [   'id'=>'3',
+                                                'firstName'=>'Larry',
+                                                'lastName'=>'the Bird',
+                                                'userName'=>'@twitter',
+                                            ],
+                                            [   'id'=>'4',
+                                                'firstName'=>'Larry the Bird',
+                                                'lastName'=>'Bird',
+                                                'userName'=>'@twitter',
+                                            ],
+                                        ];
+                                    ?>
+                                    <?php foreach ($users as $user): ?>
                                         <tr>
-                                            <th scope="row">1</th>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
+                                            <th scope="row"><?php echo $user['id'] ?></th>
+                                            <td><?php echo $user['firstName'] ?></td>
+                                            <td><?php echo $user['lastName'] ?></td>
+                                            <td><?php echo $user['userName'] ?></td>
                                             <td>
-                                                <a href="show.php?id=" class="btn btn-info">Редактировать</a>
-                                                <a href="edit.php?id=" class="btn btn-warning">Изменить</a>
-                                                <a href="delete.php?id=" class="btn btn-danger">Удалить</a>
+                                                <a href="show.php?id=<?php echo $user['id'] ?>" class="btn btn-info">Редактировать</a>
+                                                <a href="edit.php?id=<?php echo $user['id'] ?>" class="btn btn-warning">Изменить</a>
+                                                <a href="delete.php?id=<?php echo $user['id'] ?>" class="btn btn-danger">Удалить</a>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                            <td>
-                                                <a href="show.php?id=" class="btn btn-info">Редактировать</a>
-                                                <a href="edit.php?id=" class="btn btn-warning">Изменить</a>
-                                                <a href="delete.php?id=" class="btn btn-danger">Удалить</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td>Larry</td>
-                                            <td>the Bird</td>
-                                            <td>@twitter</td>
-                                            <td>
-                                                <a href="show.php?id=" class="btn btn-info">Редактировать</a>
-                                                <a href="edit.php?id=" class="btn btn-warning">Изменить</a>
-                                                <a href="delete.php?id=" class="btn btn-danger">Удалить</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">4</th>
-                                            <td>Larry the Bird</td>
-                                            <td> Bird</td>
-                                            <td>@twitter</td>
-                                            <td>
-                                                <a href="show.php?id=" class="btn btn-info">Редактировать</a>
-                                                <a href="edit.php?id=" class="btn btn-warning">Изменить</a>
-                                                <a href="delete.php?id=" class="btn btn-danger">Удалить</a>
-                                            </td>
-                                        </tr>
+                                    <?php endforeach; ?>
+
+
+
                                     </tbody>
                                 </table>
                             </div>

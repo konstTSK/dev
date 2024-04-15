@@ -45,7 +45,8 @@
                                 'role'=>'IT Director, Gotbootstrap Inc.',
                                 'phone'=>'+1 317-456-2564',
                                 'mail'=>'oliver.kopyov@smartadminwebapp.com',
-                                'addres'=>'15 Charist St, Detroit, MI, 48212, USA'
+                                'addres'=>'15 Charist St, Detroit, MI, 48212, USA',
+                                'tags'=>'oliver kopyov',
                             ],
                         [
                             'avatar'=>'avatar-c.png',
@@ -54,7 +55,8 @@
                             'role'=>'Project Manager, Gotbootstrap Inc.',
                             'phone'=>'+1 313-461-1347',
                             'mail'=>'oliver.kopyov@smartadminwebapp.com',
-                            'addres'=>'134 Hamtrammac, Detroit, MI, 48314, USA'
+                            'addres'=>'134 Hamtrammac, Detroit, MI, 48314, USA',
+                            'tags'=>'sesha gray',
                         ],
                         [
                             'avatar'=>'avatar-e.png',
@@ -63,7 +65,8 @@
                             'role'=>'Human Resources, Gotbootstrap Inc.',
                             'phone'=>'+1 313-779-1347',
                             'mail'=>'john.cook@smartadminwebapp.com',
-                            'addres'=>'55 Smyth Rd, Detroit, MI, 48341, USA'
+                            'addres'=>'55 Smyth Rd, Detroit, MI, 48341, USA',
+                            'tags'=>'Dr. John Cook PhD',
                         ],
                         [
                             'avatar'=>'avatar-k.png',
@@ -72,7 +75,8 @@
                             'role'=>'Staff Orgnizer, Gotbootstrap Inc.',
                             'phone'=>'+1 313-779-3314',
                             'mail'=>'jim.ketty@smartadminwebapp.com',
-                            'addres'=>'134 Tasy Rd, Detroit, MI, 48212, USA'
+                            'addres'=>'134 Tasy Rd, Detroit, MI, 48212, USA',
+                            'tags'=>'jim ketty',
                         ],
                         [
                             'avatar'=>'avatar-g.png',
@@ -81,7 +85,8 @@
                             'role'=>'Oncologist, Gotbootstrap Inc.',
                             'phone'=>'+1 313-779-8134',
                             'mail'=>'john.oliver@smartadminwebapp.com',
-                            'addres'=>'134 Gallery St, Detroit, MI, 46214, USA'
+                            'addres'=>'134 Gallery St, Detroit, MI, 46214, USA',
+                            'tags'=>'Dr. John Oliver',
                         ],
                         [
                             'avatar'=>'avatar-h.png',
@@ -90,7 +95,8 @@
                             'role'=>'Xray Division, Gotbootstrap Inc.',
                             'phone'=>'+1 313-779-7613',
                             'mail'=>'sarah.mcbrook@smartadminwebapp.com',
-                            'addres'=>'13 Jamie Rd, Detroit, MI, 48313, USA'
+                            'addres'=>'13 Jamie Rd, Detroit, MI, 48313, USA',
+                            'tags'=>'Sarah McBrook',
                         ],
                         [
                             'avatar'=>'avatar-i.png',
@@ -99,7 +105,8 @@
                             'role'=>'Accounting, Gotbootstrap Inc.',
                             'phone'=>'+1 313-779-4314',
                             'mail'=>'jimmy.fallan@smartadminwebapp.com',
-                            'addres'=>'55 Smyth Rd, Detroit, MI, 48341, USA'
+                            'addres'=>'55 Smyth Rd, Detroit, MI, 48341, USA',
+                            'tags'=>'Jimmy Fellan',
                         ],
                         [
                             'avatar'=>'avatar-j.png',
@@ -108,14 +115,15 @@
                             'role'=>'Accounting, Gotbootstrap Inc.',
                             'phone'=>'+1 313-779-3347',
                             'mail'=>'arica.grace@smartadminwebapp.com',
-                            'addres'=>'798 Smyth Rd, Detroit, MI, 48341, USA'
+                            'addres'=>'798 Smyth Rd, Detroit, MI, 48341, USA',
+                            'tags'=>'Arica Grace',
                         ],
                     ];
                 ?>
                 <?php foreach($users as $key => $user): ?>
 
                     <div class="col-xl-4">
-                        <div id="c_<?php echo $key; ?>" class="card border shadow-0 mb-g shadow-sm-hover" data-filter-tags="oliver kopyov">
+                        <div id="c_<?php echo $key; ?>" class="card border shadow-0 mb-g shadow-sm-hover" data-filter-tags="<?php echo $user['tags']; ?>">
                             <div class="card-body border-faded border-top-0 border-left-0 border-right-0 rounded-top">
                                 <div class="d-flex flex-row align-items-center">
                                 <span class="status status-<?php echo $user['status']; ?> mr-3">
