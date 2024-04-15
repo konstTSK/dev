@@ -121,7 +121,6 @@
                     ];
                 ?>
                 <?php foreach($users as $key => $user): ?>
-
                     <div class="col-xl-4">
                         <div id="c_<?php echo $key; ?>" class="card border shadow-0 mb-g shadow-sm-hover" data-filter-tags="<?php echo $user['tags']; ?>">
                             <div class="card-body border-faded border-top-0 border-left-0 border-right-0 rounded-top">
@@ -171,11 +170,6 @@
                         </div>
                     </div>
                 <?php endforeach; ?>
-
-
-
-
-
             </div>
         </main>
         

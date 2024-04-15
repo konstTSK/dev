@@ -35,7 +35,6 @@
 
                            <div class="d-flex flex-wrap demo demo-h-spacing mt-3 mb-3">
                                <?php
-
                                     $users = [
                                             [
                                               'avatar'=>'sunny.png',
