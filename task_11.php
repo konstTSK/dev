@@ -47,9 +47,6 @@
                             if ($text) {
                                 $_SESSION['message'] = 'запись уже есть в базе данных';
 
-                            } else {
-
-                                session_unset();
                             }
                             ?>
 
