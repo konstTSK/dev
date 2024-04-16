@@ -14,9 +14,6 @@ $array = [
 
 ?>
 
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,8 +61,6 @@ $array = [
                 </div>
             </div>
         </main>
-        
-
         <script src="js/vendors.bundle.js"></script>
         <script src="js/app.bundle.js"></script>
         <script>

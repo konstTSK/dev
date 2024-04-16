@@ -31,13 +31,24 @@
                             <button class="btn btn-panel waves-effect waves-themed" data-action="panel-fullscreen" data-toggle="tooltip" data-offset="0,10" data-original-title="Fullscreen"></button>
                         </div>
                     </div>
+
+                    <?php
+
+                    $text = $_POST['text'];
+
+                    $pdo = new PDO("mysql:host=localhost;dbname=dev", "root", "root");
+                        $stmt = $pdo->prepare("INSERT INTO table1 (text) VALUES (:text)");
+                        $stmt->bindParam(':text', $text);
+                        $stmt->execute();
+                    ?>
+
                     <div class="panel-container show">
                         <div class="panel-content">
                             <div class="panel-content">
                                 <div class="form-group">
-                                    <form action="">
+                                    <form action="task_10.php" method="POST">
                                         <label class="form-label" for="simpleinput">Text</label>
-                                        <input type="text" id="simpleinput" class="form-control">
+                                        <input type="text" id="simpleinput" name="text" class="form-control">
                                         <button class="btn btn-success mt-3">Submit</button>
                                     </form>
                                 </div>
