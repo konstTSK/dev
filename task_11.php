@@ -57,10 +57,11 @@
                                 <div class="form-group">
                                     <?php  if (!is_null($_SESSION['message'])): ?>
                                     <div class="alert alert-danger fade show" role="alert">
-                                            <?php echo $_SESSION['message'];?>
+                                            <?php echo $_SESSION['message'];
+                                                unset($_SESSION['message']);
+                                            ?>
                                     </div>
                                     <?php endif; ?>
-                                    <?php session_unset(); ?>
                                     <form action="task_11.php" method="POST">
                                         <label class="form-label" for="simpleinput">Text</label>
                                         <input type="text" id="simpleinput" name="text" class="form-control">
