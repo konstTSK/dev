@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,14 +34,36 @@
                     </div>
                     <div class="panel-container show">
                         <div class="panel-content">
+                            <?php
+
+                            $text = $_POST['text'];
+                            $pdo = new PDO("mysql:host=localhost;dbname=dev", "root", "root");
+
+                            $stmt = $pdo->prepare("SELECT * FROM table1 WHERE text = :text");
+                            $stmt->bindParam(':text', $text);
+                            $stmt->execute();
+
+                            $text = $stmt->fetch(PDO::FETCH_ASSOC);
+                            if ($text) {
+                                $_SESSION['message'] = 'запись уже есть в базе данных';
+
+                            } else {
+
+                                session_unset();
+                            }
+                            ?>
+
                             <div class="panel-content">
                                 <div class="form-group">
+                                    <?php  if (!is_null($_SESSION['message'])): ?>
                                     <div class="alert alert-danger fade show" role="alert">
-                                        You should check in on some of those fields below.
+                                            <?php echo $_SESSION['message'];?>
                                     </div>
-                                    <form action="">
+                                    <?php endif; ?>
+                                    <?php session_unset(); ?>
+                                    <form action="task_11.php" method="POST">
                                         <label class="form-label" for="simpleinput">Text</label>
-                                        <input type="text" id="simpleinput" class="form-control">
+                                        <input type="text" id="simpleinput" name="text" class="form-control">
                                         <button class="btn btn-success mt-3">Submit</button>
                                     </form>
                                 </div>

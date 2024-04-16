@@ -33,13 +33,13 @@
                     </div>
 
                     <?php
-
                     $text = $_POST['text'];
 
                     $pdo = new PDO("mysql:host=localhost;dbname=dev", "root", "root");
-                        $stmt = $pdo->prepare("INSERT INTO table1 (text) VALUES (:text)");
-                        $stmt->bindParam(':text', $text);
-                        $stmt->execute();
+                    $stmt = $pdo->prepare("INSERT INTO table1 (text) VALUES (:text)");
+                    $stmt->bindParam(':text', $text);
+                    $stmt->execute();
+
                     ?>
 
                     <div class="panel-container show">
