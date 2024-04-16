@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,10 +36,12 @@
                         <div class="panel-content">
                             <div class="panel-content">
                                 <div class="form-group">
-                                    <div class="alert alert-info">Ваше сообщение выводится тут</div>
-                                    <form action="">
+                                <?php if(!empty($_SESSION['message'])): ?>
+                                    <div class="alert alert-info"> <?php echo  $_SESSION['message'];  unset($_SESSION['message']); ?></div>
+                                <?php endif; ?>
+                                    <form action="task_13_handler.php" method="POST">
                                         <label class="form-label" for="simpleinput">Text</label>
-                                        <input type="text" id="simpleinput" class="form-control">
+                                        <input type="text" id="simpleinput" name="message" class="form-control">
                                         <button class="btn btn-success mt-3">Submit</button>
                                     </form>
                                 </div>
