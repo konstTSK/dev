@@ -37,10 +37,10 @@
                             <div class="panel-content">
                                 <div class="panel-content">
                                     <div class="form-group">
-                                        <form action="">
+                                        <form action="task_19_upload.php" enctype="multipart/form-data" method="POST">
                                             <div class="form-group">
                                                 <label class="form-label" for="simpleinput">Image</label>
-                                            <input type="file" id="simpleinput" class="form-control">
+                                            <input type="file"  name="files[]" id="simpleinput" class="form-control" multiple>
                                             </div>
                                             <button class="btn btn-success mt-3">Submit</button>
                                         </form>
@@ -64,19 +64,22 @@
                         </div>
                         <div class="panel-container show">
                             <div class="panel-content">
+                                <?php
+                                    $pdo = new PDO("mysql:hosst=localhost;dbname=dev","root","");
+                                    $sql = 'SELECT * FROM table3';
+                                    $stmt = $pdo->prepare($sql);
+                                    $stmt->execute();
+                                    $imsqes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                    ?>
                                 <div class="panel-content image-gallery">
                                     <div class="row">
-                                        <div class="col-md-3 image">
-                                            <img src="img/demo/gallery/1.jpg">
-                                        </div>
 
+                                        <?php foreach ($imsqes as $imaqe): ?>
                                         <div class="col-md-3 image">
-                                            <img src="img/demo/gallery/2.jpg">
+                                            <img src="upload/<?php echo $imaqe['img_name']; ?>">
                                         </div>
+                                        <?php endforeach; ?>
 
-                                        <div class="col-md-3 image">
-                                            <img src="img/demo/gallery/3.jpg">
-                                        </div>
                                     </div>
                                 </div>
                             </div>
