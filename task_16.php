@@ -1,3 +1,11 @@
+<?php session_start(); ?>
+<?php
+if( empty($_SESSION['auth']) ) {
+    $_SESSION['warning']= 'Вы не авторизованы';
+    header("Location: /task_15.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,14 +38,17 @@
                             <button class="btn btn-panel waves-effect waves-themed" data-action="panel-fullscreen" data-toggle="tooltip" data-offset="0,10" data-original-title="Fullscreen"></button>
                         </div>
                     </div>
+
+
                     <div class="panel-container show">
                         <div class="panel-content">
                             <div class="panel-content">
                                 <div class="form-group">
                                     <div class="alert alert-success fade show" role="alert">
-                                        Здравствуйте, ИМЯ_ПОЛЬЗОВАТЕЛЯ.
+                                        Здравствуйте, <?php echo $_SESSION['username']; ?>.
                                     </div>
-                                    <a href="#" class="btn btn-info">Выйти</a>
+                                    <a href="task_15_logout.php" class="btn btn-info">Выйти</a>
+
                                 </div>
                             </div>
                         </div>
