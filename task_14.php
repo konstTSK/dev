@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,9 +36,10 @@
                             <div class="panel-content">
                                 <div class="form-group">
                                     <div class="alert alert-info fade show" role="alert">
-                                        Кнопка была нажата: <b>0</b> раз
+                                        Кнопка была нажата: <b><?php echo empty($_SESSION['id']) ? "0" : $_SESSION['id'] ?></b> раз
                                     </div>
-                                    <form action="">
+                                    <form action="task_14_handler.php" method="POST">
+                                        <input name="id" value="1" hidden>
                                         <button class="btn btn-success mt-3">Submit</button>
                                     </form>
                                 </div>
