@@ -39,7 +39,6 @@
                                         Кнопка была нажата: <b><?php echo empty($_SESSION['id']) ? "0" : $_SESSION['id'] ?></b> раз
                                     </div>
                                     <form action="task_14_handler.php" method="POST">
-                                        <input name="id" value="1" hidden>
                                         <button class="btn btn-success mt-3">Submit</button>
                                     </form>
                                 </div>
